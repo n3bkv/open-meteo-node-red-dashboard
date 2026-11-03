@@ -1,0 +1,14 @@
+# macOS metadata
+.DS_Store
+__MACOSX/
+._*
+
+# Node-RED local credentials and local environment
+.env
+.env.*
+!*.example
+flows_cred.json
+*.backup
+
+# Development dependencies
+node_modules/
