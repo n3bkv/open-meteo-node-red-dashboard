@@ -1,0 +1,1354 @@
+[
+  {
+    "id": "f1056f43047bcea4",
+    "type": "tab",
+    "label": "Weather Dashboard | Open-Meteo (generic)",
+    "disabled": false,
+    "info": " "
+  },
+  {
+    "id": "1d312e8c2f423ef1",
+    "type": "ui_template",
+    "z": "f1056f43047bcea4",
+    "group": "",
+    "name": "WX · global stylesheet",
+    "order": 0,
+    "width": 0,
+    "height": 0,
+    "format": "<style>\n.wx-wrap{font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;color:#e9f1fa;background:#111c2d;border-radius:14px;padding:18px;line-height:1.38}\n.wx-wrap *{box-sizing:border-box}.wx-wrap h2{margin:0;font-size:23px;font-weight:700;color:#fff}.wx-wrap h3{font-size:16px;font-weight:700;color:#f4f8ff;margin:0 0 11px}.wx-wrap a{color:#93deff;text-decoration:none}.wx-wrap a:hover{text-decoration:underline}\n.wx-wrap .wx-sub{color:#98afc7;font-size:12px}.wx-wrap .wx-kicker{font-size:11px;letter-spacing:1.5px;font-weight:750;color:#67d4e9;text-transform:uppercase}.wx-wrap .wx-topline{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin-bottom:17px}.wx-wrap .wx-pill{border:1px solid #35506b;background:#19314c;border-radius:16px;padding:6px 11px;font-size:11px;font-weight:700;color:#a0e3f2;white-space:nowrap}\n.wx-wrap .wx-hero{display:grid;grid-template-columns:minmax(170px,1.25fr) 1fr 1fr;gap:14px;align-items:stretch}\n.wx-wrap .wx-hero-main{background:linear-gradient(140deg,#1a4d76 0%,#16425b 48%,#1d324b 100%);border:1px solid #447993;min-height:180px;padding:19px;border-radius:12px}.wx-wrap .wx-hero-temp{font-weight:770;font-size:clamp(46px,5vw,76px);letter-spacing:-3px;line-height:1.12;color:#fff}.wx-wrap .wx-hero-icon{font-size:40px;float:right;line-height:1}\n.wx-wrap .wx-panel{background:#1a293f;border:1px solid #2b435a;border-radius:12px;padding:17px;min-width:0}.wx-wrap .wx-panel-soft{background:#16263b}.wx-wrap .wx-big{font-size:30px;font-weight:770;color:#fff;letter-spacing:-1px}.wx-wrap .wx-note{color:#a4bed4;font-size:12px}\n.wx-wrap .wx-tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:11px;margin-top:14px}.wx-wrap .wx-tile{padding:15px;background:#192b40;border:1px solid #30465e;border-radius:10px;min-width:0}.wx-wrap .wx-label{font-size:12px;font-weight:560;color:#abc0d4}.wx-wrap .wx-value{color:white;font-size:26px;line-height:1.5;font-weight:730;white-space:nowrap}.wx-wrap .wx-unit{font-size:13px;color:#97b9cf;margin-left:4px;font-weight:500}\n.wx-wrap .wx-alertrow{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0 0}.wx-wrap .wx-alert{background:#223045;border:1px solid #425369;padding:10px 13px;border-radius:8px;flex:1 1 210px}.wx-wrap .wx-alert strong{color:#f8fafc;font-size:12px}.wx-wrap .wx-alert p{color:#bbccdf;font-size:12px;margin:4px 0 0}.wx-wrap .wx-alert.hot,.wx-wrap .wx-alert.wind,.wx-wrap .wx-alert.air{border-left:3px solid #f97316}.wx-wrap .wx-alert.rain{border-left:3px solid #38bdf8}.wx-wrap .wx-alert.calm{border-left:3px solid #34d399}\n.wx-wrap .wx-section{margin:21px 0 11px}.wx-wrap .wx-grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.wx-wrap .wx-grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.wx-wrap .wx-mini{font-size:12px;color:#a3bbd0}\n.wx-wrap .wx-wind{display:flex;gap:17px;align-items:center}.wx-wrap .wx-compass{width:92px;height:92px;flex:none;border-radius:50%;border:2px solid #4b6883;display:flex;align-items:center;justify-content:center;position:relative;color:#b9cee4;background:radial-gradient(circle,#28435f,#142337)}.wx-wrap .wx-compass::before{content:'N';position:absolute;top:4px;font-size:10px}.wx-wrap .wx-arrow{font-size:38px;color:#7ee0fa;display:inline-block;line-height:1}\n.wx-wrap .wx-dayrows{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:9px}.wx-wrap .wx-day{border:1px solid #344f65;background:#20344c;border-radius:10px;padding:12px 9px;min-width:0;text-align:center}.wx-wrap .wx-day h4{font-size:13px;margin:3px 0 7px;color:#fff}.wx-wrap .wx-day .wx-dayicon{font-size:30px;line-height:1.3}.wx-wrap .wx-day .wx-temps{font-weight:760;color:#fbfdff;font-size:19px;margin:7px 0}.wx-wrap .wx-day .wx-temps span{color:#89a7c7;font-size:15px;font-weight:530}.wx-wrap .wx-day .wx-details{font-size:11px;color:#bed1e4;margin:5px 0}\n.wx-wrap .wx-table-wrap{overflow-x:auto}.wx-wrap table{border-collapse:collapse;width:100%;font-size:12px}.wx-wrap th{text-transform:uppercase;font-size:10px;letter-spacing:.7px;color:#8cb5ce;text-align:left;padding:10px 8px;border-bottom:1px solid #42566e}.wx-wrap td{color:#e2ecfa;padding:9px 8px;border-bottom:1px solid #2e455d;white-space:nowrap}.wx-wrap tr:last-child td{border-bottom:0}\n.wx-wrap .wx-air{display:flex;align-items:center;gap:18px;flex-wrap:wrap}.wx-wrap .wx-aqi-number{font-size:66px;font-weight:790;line-height:1;color:#fff}.wx-wrap .wx-pollutants{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}\n.wx-wrap .wx-statrow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:11px}.wx-wrap .wx-statrow .wx-value{font-size:22px}.wx-wrap .wx-foot{font-size:11px;color:#9ab0c6;margin-top:15px;line-height:1.5}.wx-wrap .wx-diagnostic{display:flex;align-items:center;gap:12px;justify-content:space-between;margin:7px 0;padding:13px 12px;border:1px solid #365067;border-radius:9px;background:#203249}.wx-wrap .wx-ok{color:#4ade80;font-weight:700}.wx-wrap .wx-err{color:#fb923c;font-weight:700}\n@media(max-width:900px){.wx-wrap .wx-hero{grid-template-columns:1fr 1fr}.wx-wrap .wx-hero-main{grid-column:1 / -1}.wx-wrap .wx-tiles,.wx-wrap .wx-statrow{grid-template-columns:repeat(2,minmax(0,1fr))}.wx-wrap .wx-dayrows{grid-template-columns:repeat(4,minmax(0,1fr))}}\n@media(max-width:600px){.wx-wrap{padding:12px}.wx-wrap .wx-hero,.wx-wrap .wx-grid2,.wx-wrap .wx-grid3{grid-template-columns:1fr}.wx-wrap .wx-hero-main{grid-column:auto}.wx-wrap .wx-tiles{grid-template-columns:repeat(2,minmax(0,1fr))}.wx-wrap .wx-dayrows{grid-template-columns:repeat(2,minmax(0,1fr))}.wx-wrap .wx-pollutants{grid-template-columns:repeat(2,minmax(0,1fr))}.wx-wrap .wx-value{font-size:21px}.wx-wrap .wx-statrow{grid-template-columns:repeat(2,minmax(0,1fr))}}\n</style>\n<style>\n/* One-page compact command center; scoped to this weather template. */\n.wx-onepage{padding:14px 16px}.wx-onepage .wx-command-header{margin-bottom:12px}.wx-onepage .wx-command-header h2{font-size:23px}.wx-onepage .wx-title-id{font-size:15px;font-weight:500;color:#83b3d6}.wx-onepage .wx-live-tag{font-size:11px;font-weight:750;color:#b6eeeb;background:#133a48;border:1px solid #245468;padding:8px 12px;border-radius:9px;white-space:nowrap}.wx-onepage .wx-live-tag small{display:block;color:#9baec3;font-size:10px;font-weight:600;margin-top:2px}.wx-onepage .wx-status-light{display:inline-block;width:8px;height:8px;border-radius:50%;background:#4ade80;margin-right:6px}.wx-onepage .wx-status-light.wx-status-bad{background:#fb923c}\n.wx-onepage .wx-snapshot{display:grid;grid-template-columns:minmax(240px,1.38fr) repeat(3,minmax(145px,1fr));gap:9px}.wx-onepage .wx-snap-weather{min-height:136px;padding:12px 17px}.wx-onepage .wx-hero-temp{font-size:54px}.wx-onepage .wx-fahrenheit{font-size:20px;vertical-align:super;letter-spacing:0}.wx-onepage .wx-snap-icon{float:right;font-size:30px}.wx-onepage .wx-snap-condition{font-size:16px;color:#fff;font-weight:700;margin:3px 0}.wx-onepage .wx-snap-panel{padding:12px 13px}.wx-onepage .wx-snap-panel .wx-kicker{font-size:10px}.wx-onepage .wx-snap-wind{gap:12px;margin-top:9px}.wx-onepage .wx-compass{width:60px;height:60px}.wx-onepage .wx-arrow{font-size:27px}.wx-onepage .wx-big{font-size:23px}.wx-onepage .wx-big small,.wx-onepage .wx-snap-number small{font-size:10px;font-weight:500;color:#a0c4d8}.wx-onepage .wx-sunstrip{display:grid;grid-template-columns:1fr 1fr;gap:5px;margin-top:13px}.wx-onepage .wx-snap-number{color:#fff;font-size:16px;font-weight:720;line-height:1.25;overflow-wrap:anywhere}.wx-onepage .wx-snap-air{gap:7px;margin:8px 0 4px}.wx-onepage .wx-snap-air .wx-aqi-number{font-size:47px}\n.wx-onepage .wx-section{margin:13px 0 9px}.wx-onepage .wx-section-title h3{margin-bottom:8px}.wx-onepage .wx-dense-tiles{grid-template-columns:repeat(6,minmax(0,1fr));gap:7px;margin:0}.wx-onepage .wx-dense-tiles .wx-tile{padding:10px 11px}.wx-onepage .wx-dense-tiles .wx-value{font-size:21px;line-height:1.2;margin-top:3px}.wx-onepage .wx-dense-tiles .wx-unit{font-size:11px}.wx-onepage .wx-dense-tiles .wx-label{font-size:11px}.wx-onepage .wx-dense-tiles .wx-mini{font-size:10px;margin-top:4px}.wx-onepage .wx-compact-columns{display:grid;grid-template-columns:1fr 1fr;gap:9px}.wx-onepage .wx-compact-panel{padding:11px 13px}.wx-onepage .wx-compact-panel h3{font-size:13px;margin-bottom:8px}.wx-onepage .wx-compact-insights{display:flex;flex-wrap:wrap;gap:7px}.wx-onepage .wx-compact-insights .wx-alert{padding:7px 9px;flex:1 1 180px}.wx-onepage .wx-faststats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin-top:9px}.wx-onepage .wx-faststats>div{display:flex;justify-content:space-between;gap:8px;align-items:baseline;border-bottom:1px solid #344961;padding:4px 2px}.wx-onepage .wx-faststats strong{white-space:nowrap;color:#fff;font-size:13px}.wx-onepage .wx-archive-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;margin-top:12px}.wx-onepage .wx-archive-strip>div{display:flex;flex-direction:column;gap:3px}.wx-onepage .wx-archive-strip strong{color:white;font-size:13px}\n.wx-onepage .wx-compact-days{gap:5px}.wx-onepage .wx-compact-days .wx-day{padding:7px 5px}.wx-onepage .wx-compact-days .wx-day h4{margin:2px 0 3px}.wx-onepage .wx-compact-days .wx-day .wx-dayicon{font-size:20px}.wx-onepage .wx-compact-days .wx-day .wx-temps{font-size:17px;margin:3px 0}.wx-onepage .wx-compact-days .wx-day .wx-details{margin:3px 0}.wx-onepage .wx-compact-days .wx-condition{min-height:25px}\n.wx-onepage .wx-expanders{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px}.wx-onepage .wx-expand{background:#182d43;border:1px solid #36506a;border-radius:9px;min-width:0}.wx-onepage .wx-expand summary{padding:10px 13px;cursor:pointer;font-weight:700;color:#eef7ff;font-size:12px}.wx-onepage .wx-expand summary span{font-weight:400;font-size:10px;color:#a5bdd1;margin-left:5px}.wx-onepage .wx-expand[open]{grid-column:1 / -1}.wx-onepage .wx-expand[open] summary{border-bottom:1px solid #36506a}.wx-onepage .wx-expand>div,.wx-onepage .wx-expand>p{margin:10px}.wx-onepage .wx-compact-pollutants{grid-template-columns:repeat(6,minmax(0,1fr))}.wx-onepage .wx-compact-pollutants .wx-tile{padding:8px}.wx-onepage .wx-compact-pollutants .wx-value{font-size:19px}.wx-onepage .wx-history-grid .wx-panel{padding:12px}.wx-onepage .wx-history-stats>div{display:flex;justify-content:space-between;gap:10px;padding:4px 0;border-bottom:1px solid #3d5167;font-size:12px}.wx-onepage .wx-history-stats span{color:#a6bbcf}.wx-onepage .wx-history-stats strong{color:white}.wx-onepage .wx-provenance{margin-bottom:0}\n@media(max-width:1200px){.wx-onepage .wx-snapshot{grid-template-columns:repeat(2,minmax(0,1fr))}.wx-onepage .wx-dense-tiles{grid-template-columns:repeat(4,minmax(0,1fr))}.wx-onepage .wx-compact-days{grid-template-columns:repeat(4,minmax(0,1fr))}}\n@media(max-width:750px){.wx-onepage .wx-snapshot{grid-template-columns:1fr 1fr}.wx-onepage .wx-dense-tiles{grid-template-columns:repeat(3,minmax(0,1fr))}.wx-onepage .wx-compact-columns{grid-template-columns:1fr}.wx-onepage .wx-expanders{grid-template-columns:1fr}.wx-onepage .wx-expand[open]{grid-column:1}.wx-onepage .wx-compact-pollutants{grid-template-columns:repeat(3,minmax(0,1fr))}}\n@media(max-width:500px){.wx-onepage .wx-snapshot{grid-template-columns:1fr}.wx-onepage .wx-dense-tiles{grid-template-columns:repeat(2,minmax(0,1fr))}.wx-onepage .wx-compact-days{grid-template-columns:repeat(2,minmax(0,1fr))}.wx-onepage .wx-archive-strip{grid-template-columns:1fr 1fr}}\n</style>\n",
+    "storeOutMessages": false,
+    "fwdInMessages": false,
+    "resendOnRefresh": false,
+    "templateScope": "global",
+    "className": "",
+    "x": 1310,
+    "y": 110,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "6a13e0b9e59eab2e",
+    "type": "function",
+    "z": "f1056f43047bcea4",
+    "name": "CONFIG | location & Open-Meteo APIs",
+    "func": "// LOCATION SETTINGS — change DEFAULTS, or use Node-RED process environment variables.\n// The example location is public/sample data, NOT a personal weather station.\n// Environment overrides: WX_LAT, WX_LON, WX_TIMEZONE, WX_LABEL.\n// Units are fixed to US: degrees F, mph, inches, and inHg in the analytics/UI.\nconst DEFAULTS = {\n    latitude: 40.7128,\n    longitude: -74.0060,\n    timezone: 'America/New_York',\n    label: 'Example: New York City (configure your location)'\n};\nfunction readSetting(name, fallback) {\n    const value = env.get(name);\n    return (value === undefined || value === null || String(value).trim() === '') ? fallback : value;\n}\nconst LAT = Number(readSetting('WX_LAT', DEFAULTS.latitude));\nconst LON = Number(readSetting('WX_LON', DEFAULTS.longitude));\nconst TZ = String(readSetting('WX_TIMEZONE', DEFAULTS.timezone));\nconst LABEL = String(readSetting('WX_LABEL', DEFAULTS.label));\nif (!Number.isFinite(LAT) || LAT < -90 || LAT > 90 ||\n    !Number.isFinite(LON) || LON < -180 || LON > 180) {\n    node.error('Invalid WX_LAT/WX_LON: latitude must be -90..90 and longitude -180..180', msg);\n    return null;\n}\ntry { new Intl.DateTimeFormat('en-US', {timeZone:TZ}).format(new Date()); }\ncatch (e) { node.error('Invalid WX_TIMEZONE: use an IANA timezone, e.g. Europe/London', msg); return null; }\n\n// Clear previous location's caches to avoid mixing weather for two places.\nconst cfg = {lat:LAT, lon:LON, timezone:TZ, location:LABEL};\nconst previous = flow.get('wx_config');\nif (!previous || previous.lat !== cfg.lat || previous.lon !== cfg.lon || previous.timezone !== cfg.timezone) {\n    ['forecast', 'air', 'archive'].forEach(k => flow.set('wx_' + k, null));\n    flow.set('wx_diag', {});\n}\nflow.set('wx_config', cfg);\n\nfunction query(obj) {\n    return Object.keys(obj).map(k => encodeURIComponent(k) + '=' + encodeURIComponent(obj[k])).join('&');\n}\nfunction localDate(daysFromToday) {\n    // Advance the calendar date in the selected timezone, independent of DST day lengths.\n    const parts = new Intl.DateTimeFormat('en-US', {\n        timeZone: TZ, year: 'numeric', month: '2-digit', day: '2-digit'\n    }).formatToParts(new Date());\n    const p = {}; parts.forEach(x => { p[x.type] = x.value; });\n    return new Date(Date.UTC(Number(p.year), Number(p.month) - 1,\n        Number(p.day) + daysFromToday, 12)).toISOString().slice(0, 10);\n}\nconst common = {\n    latitude: LAT, longitude: LON, timezone: TZ, timeformat: 'unixtime',\n    temperature_unit: 'fahrenheit', wind_speed_unit: 'mph', precipitation_unit: 'inch'\n};\nconst forecast = Object.assign({}, common, {\n    current: 'temperature_2m,relative_humidity_2m,apparent_temperature,is_day,precipitation,rain,showers,weather_code,cloud_cover,pressure_msl,surface_pressure,wind_speed_10m,wind_direction_10m,wind_gusts_10m,dew_point_2m,visibility,uv_index,shortwave_radiation,vapour_pressure_deficit,soil_temperature_0cm,soil_moisture_0_to_1cm',\n    hourly: 'temperature_2m,relative_humidity_2m,dew_point_2m,apparent_temperature,precipitation_probability,precipitation,rain,weather_code,pressure_msl,cloud_cover,visibility,uv_index,shortwave_radiation,et0_fao_evapotranspiration,wind_speed_10m,wind_direction_10m,wind_gusts_10m,soil_temperature_0cm,soil_moisture_0_to_1cm,vapour_pressure_deficit',\n    daily: 'weather_code,temperature_2m_max,temperature_2m_min,temperature_2m_mean,apparent_temperature_max,apparent_temperature_min,uv_index_max,precipitation_sum,precipitation_probability_max,precipitation_hours,wind_speed_10m_max,wind_gusts_10m_max,sunrise,sunset,daylight_duration,sunshine_duration,shortwave_radiation_sum,et0_fao_evapotranspiration',\n    past_days: 7, forecast_days: 7\n});\nconst air = {\n    latitude: LAT, longitude: LON, timezone: TZ, timeformat: 'unixtime',\n    current: 'us_aqi,pm2_5,pm10,ozone,nitrogen_dioxide,carbon_monoxide,sulphur_dioxide',\n    hourly: 'us_aqi,pm2_5,pm10,ozone', past_days: 2, forecast_days: 3\n};\nconst archive = Object.assign({}, common, {\n    // Historical reanalysis intentionally stops 8 days ago; 60 complete days requested.\n    start_date: localDate(-67), end_date: localDate(-8),\n    daily: 'temperature_2m_max,temperature_2m_min,temperature_2m_mean,precipitation_sum,wind_speed_10m_max,wind_gusts_10m_max,shortwave_radiation_sum,et0_fao_evapotranspiration'\n});\nconst feed = String(msg.topic || 'forecast').toLowerCase();\nconst out = [null, null, null];\nconst feeds = {\n    forecast: {index: 0, url: 'https://api.open-meteo.com/v1/forecast?', args: forecast},\n    air: {index: 1, url: 'https://air-quality-api.open-meteo.com/v1/air-quality?', args: air},\n    archive: {index: 2, url: 'https://archive-api.open-meteo.com/v1/archive?', args: archive}\n};\nconst selected = feeds[feed];\nif (!selected) { node.warn('Unknown weather feed: ' + feed); return null; }\nmsg._feed = feed;\nmsg.url = selected.url + query(selected.args);\nout[selected.index] = msg;\nreturn out;",
+    "outputs": 3,
+    "timeout": 0,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 360,
+    "y": 300,
+    "wires": [
+      [
+        "9bc0698a11f9c421"
+      ],
+      [
+        "46cf342cabcb8d62"
+      ],
+      [
+        "b79e6dbb92e55071"
+      ]
+    ]
+  },
+  {
+    "id": "c81a7c0b023e64c0",
+    "type": "inject",
+    "z": "f1056f43047bcea4",
+    "name": "Refresh forecast",
+    "props": [
+      {
+        "p": "topic",
+        "v": "forecast",
+        "vt": "str"
+      },
+      {
+        "p": "payload",
+        "v": "",
+        "vt": "date"
+      }
+    ],
+    "repeat": "600",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "1.5",
+    "topic": "forecast",
+    "payload": "",
+    "payloadType": "date",
+    "x": 100,
+    "y": 230,
+    "wires": [
+      [
+        "6a13e0b9e59eab2e"
+      ]
+    ]
+  },
+  {
+    "id": "a0b7ef123af8ed03",
+    "type": "inject",
+    "z": "f1056f43047bcea4",
+    "name": "Refresh air",
+    "props": [
+      {
+        "p": "topic",
+        "v": "air",
+        "vt": "str"
+      },
+      {
+        "p": "payload",
+        "v": "",
+        "vt": "date"
+      }
+    ],
+    "repeat": "1800",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "4.0",
+    "topic": "air",
+    "payload": "",
+    "payloadType": "date",
+    "x": 100,
+    "y": 305,
+    "wires": [
+      [
+        "6a13e0b9e59eab2e"
+      ]
+    ]
+  },
+  {
+    "id": "807c3341bef13732",
+    "type": "inject",
+    "z": "f1056f43047bcea4",
+    "name": "Refresh archive",
+    "props": [
+      {
+        "p": "topic",
+        "v": "archive",
+        "vt": "str"
+      },
+      {
+        "p": "payload",
+        "v": "",
+        "vt": "date"
+      }
+    ],
+    "repeat": "21600",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "8.0",
+    "topic": "archive",
+    "payload": "",
+    "payloadType": "date",
+    "x": 100,
+    "y": 380,
+    "wires": [
+      [
+        "6a13e0b9e59eab2e"
+      ]
+    ]
+  },
+  {
+    "id": "9bc0698a11f9c421",
+    "type": "http request",
+    "z": "f1056f43047bcea4",
+    "name": "HTTP · forecast",
+    "method": "get",
+    "ret": "obj",
+    "paytoqs": "ignore",
+    "url": "",
+    "tls": "",
+    "persist": false,
+    "proxy": "",
+    "insecureHTTPParser": false,
+    "authType": "",
+    "senderr": false,
+    "headers": [],
+    "x": 700,
+    "y": 230,
+    "wires": [
+      [
+        "f44658f845e33467"
+      ]
+    ]
+  },
+  {
+    "id": "46cf342cabcb8d62",
+    "type": "http request",
+    "z": "f1056f43047bcea4",
+    "name": "HTTP · air",
+    "method": "get",
+    "ret": "obj",
+    "paytoqs": "ignore",
+    "url": "",
+    "tls": "",
+    "persist": false,
+    "proxy": "",
+    "insecureHTTPParser": false,
+    "authType": "",
+    "senderr": false,
+    "headers": [],
+    "x": 700,
+    "y": 305,
+    "wires": [
+      [
+        "f44658f845e33467"
+      ]
+    ]
+  },
+  {
+    "id": "b79e6dbb92e55071",
+    "type": "http request",
+    "z": "f1056f43047bcea4",
+    "name": "HTTP · archive",
+    "method": "get",
+    "ret": "obj",
+    "paytoqs": "ignore",
+    "url": "",
+    "tls": "",
+    "persist": false,
+    "proxy": "",
+    "insecureHTTPParser": false,
+    "authType": "",
+    "senderr": false,
+    "headers": [],
+    "x": 700,
+    "y": 380,
+    "wires": [
+      [
+        "f44658f845e33467"
+      ]
+    ]
+  },
+  {
+    "id": "f44658f845e33467",
+    "type": "function",
+    "z": "f1056f43047bcea4",
+    "name": "Store API results / errors",
+    "func": "// Accept only valid responses. Keep last good per-feed data on transient API errors.\nconst feed = msg._feed || msg.topic;\nif (['forecast', 'air', 'archive'].indexOf(feed) < 0) return null;\nconst diag = flow.get('wx_diag') || {};\nconst body = msg.payload;\nconst shape = feed === 'forecast'\n    ? body && body.current && body.hourly && Array.isArray(body.hourly.time) && body.daily && Array.isArray(body.daily.time)\n    : feed === 'air'\n        ? body && body.current && body.hourly && Array.isArray(body.hourly.time)\n        : body && body.daily && Array.isArray(body.daily.time);\nconst ok = !msg.error && Number(msg.statusCode) === 200 && body && typeof body === 'object' && !body.error && shape;\nif (ok) {\n    flow.set('wx_' + feed, body);\n    diag[feed] = {state: 'ok', at: Date.now(), message: 'HTTP 200; valid response accepted'};\n} else {\n    const reason = (msg.error && msg.error.message) || (body && body.reason) ||\n        (Number(msg.statusCode) === 200 ? 'Unexpected or incomplete API response' : 'HTTP ' + (msg.statusCode || 'request failed'));\n    diag[feed] = {state: 'error', at: Date.now(), message: String(reason).slice(0, 240)};\n    node.warn('Open-Meteo ' + feed + ' failed: ' + reason);\n}\nflow.set('wx_diag', diag);\n// The forecast is required; AQ and historical data can arrive later.\nif (!flow.get('wx_forecast')) return null;\nreturn {topic: 'render', payload: {changed: feed}};",
+    "outputs": 1,
+    "timeout": 0,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 960,
+    "y": 300,
+    "wires": [
+      [
+        "7d849824b0a45a75"
+      ]
+    ]
+  },
+  {
+    "id": "8e27651cd9e88dbd",
+    "type": "catch",
+    "z": "f1056f43047bcea4",
+    "name": "Catch HTTP transport failures",
+    "scope": [
+      "9bc0698a11f9c421",
+      "46cf342cabcb8d62",
+      "b79e6dbb92e55071"
+    ],
+    "uncaught": false,
+    "x": 680,
+    "y": 525,
+    "wires": [
+      [
+        "feca0cc154530f00"
+      ]
+    ]
+  },
+  {
+    "id": "feca0cc154530f00",
+    "type": "function",
+    "z": "f1056f43047bcea4",
+    "name": "Identify failed request",
+    "func": "// A catch message can lose custom request metadata. Resolve from actual HTTP node IDs.\nconst feedByHttpNodeId = {\n    '9bc0698a11f9c421': 'forecast',\n    '46cf342cabcb8d62': 'air',\n    'b79e6dbb92e55071': 'archive'\n};\nmsg._feed = msg._feed || feedByHttpNodeId[(msg.source || {}).id];\nif (!msg._feed) { node.warn('Unrecognized HTTP error source'); return null; }\nmsg.statusCode = 599;\nmsg.payload = {reason: (msg.error && msg.error.message) || 'Network request failed'};\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 880,
+    "y": 525,
+    "wires": [
+      [
+        "f44658f845e33467"
+      ]
+    ]
+  },
+  {
+    "id": "7d849824b0a45a75",
+    "type": "function",
+    "z": "f1056f43047bcea4",
+    "name": "Compute all weather analytics",
+    "func": "// WEATHER ANALYTICS - Open-Meteo modeled weather, not local station sensor observations.\n// Stores recent API payloads in flow scope. No external packages required.\n// Configuration comes from CONFIG: { location, lat, lon, timezone }; US units fixed.\nvar wx = flow.get('wx_forecast');\nif (!wx || !wx.hourly || !wx.daily) return null;\nvar cfg = flow.get('wx_config') || {};\nvar aq = flow.get('wx_air') || {};\nvar ar = flow.get('wx_archive') || {};\nvar diag = flow.get('wx_diag') || {};\nvar tz = cfg.timezone || wx.timezone || 'UTC';\nvar now = Date.now();\nfunction valid(v){ return v !== null && v !== undefined && Number.isFinite(Number(v)); }\nfunction num(v){ return valid(v) ? Number(v) : null; }\nfunction round(v,d){ return valid(v) ? Number(Number(v).toFixed(d===undefined?1:d)) : null; }\nfunction show(v,d,suffix){return valid(v)?round(v,d)+(suffix||''):'—';}\nfunction list(a,k){return a && Array.isArray(a[k]) ? a[k] : [];}\nfunction point(a,k,i){var v = list(a,k)[i];return num(v);}\nfunction utcms(t){return typeof t==='number'?t*1000:Date.parse(t+'Z');}\nfunction hour(t){return new Date(t).toLocaleTimeString('en-US',{timeZone:tz,hour:'numeric',minute:'2-digit'});}\nfunction date(t){return new Date(t).toLocaleDateString('en-US',{timeZone:tz,month:'short',day:'numeric'});}\nfunction weekday(t){return new Date(t).toLocaleDateString('en-US',{timeZone:tz,weekday:'short'});}\nfunction daykey(t){var p = new Intl.DateTimeFormat('en-US',{timeZone:tz,year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date(t));var o={};p.forEach(x=>o[x.type]=x.value);return o.year+'-'+o.month+'-'+o.day;}\nfunction direction(d){if(!valid(d))return '—';return ['N','NNE','NE','ENE','E','ESE','SE','SSE','S','SSW','SW','WSW','W','WNW','NW','NNW'][Math.round(((Number(d)%360)+360)%360/22.5)%16];}\nfunction weather(c,night){var w={0:['Clear','☀️'],1:['Mostly clear','🌤️'],2:['Partly cloudy','⛅'],3:['Overcast','☁️'],45:['Fog','🌫️'],48:['Rime fog','🌫️'],51:['Light drizzle','🌦️'],53:['Drizzle','🌦️'],55:['Heavy drizzle','🌧️'],56:['Freezing drizzle','🌧️'],57:['Freezing drizzle','🌧️'],61:['Light rain','🌦️'],63:['Rain','🌧️'],65:['Heavy rain','🌧️'],66:['Freezing rain','🌧️'],67:['Heavy freezing rain','🌧️'],71:['Light snow','🌨️'],73:['Snow','❄️'],75:['Heavy snow','❄️'],77:['Snow grains','🌨️'],80:['Rain showers','🌦️'],81:['Rain showers','🌧️'],82:['Heavy showers','⛈️'],85:['Snow showers','🌨️'],86:['Heavy snow showers','❄️'],95:['Thunderstorm','⛈️'],96:['T-storm and hail','⛈️'],99:['Heavy t-storm and hail','⛈️']};var r=w[c]||['Conditions unavailable','🌡️'];return {name:r[0],icon:(night && c===0)?'🌙':(night && c===1)?'🌙':r[1]};}\nfunction sum(a){return a.reduce((s,v)=>s+(valid(v)?Number(v):0),0);}\nfunction average(a){var b=a.filter(valid).map(Number);return b.length?sum(b)/b.length:null;}\nfunction extreme(a,high){var b=a.filter(valid).map(Number);return b.length?(high?Math.max.apply(null,b):Math.min.apply(null,b)):null;}\nfunction signed(v,d,s){return valid(v)?(v>0?'+':'')+show(v,d,s):'—';}\nfunction aqiBand(v){if(!valid(v))return {label:'Unavailable',color:'#64748b'};if(v<=50)return {label:'Good',color:'#22c55e'};if(v<=100)return {label:'Moderate',color:'#eab308'};if(v<=150)return {label:'Unhealthy for sensitive groups',color:'#fb923c'};if(v<=200)return {label:'Unhealthy',color:'#ef4444'};if(v<=300)return {label:'Very unhealthy',color:'#a855f7'};return {label:'Hazardous',color:'#9f1239'};}\nfunction chart(series){return [{series:series.map(s=>s[0]),data:series.map(s=>s[1]),labels:['']}];}\nfunction timeseries(obj,k,from,to){var t=list(obj,'time'),vs=list(obj,k),r=[];for(var i=0;i<t.length;i++){var x=utcms(t[i]);if(x>=from && x<=to && valid(vs[i]))r.push({x:x,y:round(vs[i],3)});}return r;}\nfunction chartObj(obj,defs,from,to){return chart(defs.map(d=>[d[0],timeseries(obj,d[1],from,to)]));}\nfunction chartDaily(obj,defs,from,to){return chart(defs.map(d=>[d[0],timeseries(obj,d[1],from,to)]));}\nfunction tile(label,v,unit,note){return {label:label,value:v,unit:unit||'',note:note||''};}\nvar h=wx.hourly, d=wx.daily, current=wx.current||{};\nvar tm=utcms(current.time||wx.hourly.time[0]);if(!Number.isFinite(tm))tm=now;\nvar currT=num(current.temperature_2m), currRH=num(current.relative_humidity_2m), currWind=num(current.wind_speed_10m);\nvar cCode=num(current.weather_code), desc=weather(cCode,current.is_day===0);\nvar today=daykey(now), allDays=[];\nfor(var i=0;i<list(d,'time').length;i++){\n  var x=utcms(d.time[i]);var key=daykey(x+12*3600000); // noon renders the correct day when daily Unix times are midnight UTC\n  // Open-Meteo daily Unix dates are UTC-midnight after timezone-offset handling.\n  // Prefer the documented utc_offset_seconds for daily-date labeling.\n  if(typeof d.time[i]==='number') {var off=num(wx.utc_offset_seconds)||0;key=new Date(x+off*1000).toISOString().slice(0,10);}\n  var w=weather(point(d,'weather_code',i),false);\n  allDays.push({t:x,key:key,label:key===today?'Today':weekday(Date.parse(key+'T12:00:00Z')),date:key,\n    icon:w.icon,conditions:w.name,high:point(d,'temperature_2m_max',i),low:point(d,'temperature_2m_min',i),\n    mean:point(d,'temperature_2m_mean',i),rain:point(d,'precipitation_sum',i),pop:point(d,'precipitation_probability_max',i),\n    gust:point(d,'wind_gusts_10m_max',i),wind:point(d,'wind_speed_10m_max',i),\n    uv:point(d,'uv_index_max',i),solar:point(d,'shortwave_radiation_sum',i),et0:point(d,'et0_fao_evapotranspiration',i),\n    sunrise:point(d,'sunrise',i),sunset:point(d,'sunset',i),daylight:point(d,'daylight_duration',i),\n    highLabel:show(point(d,'temperature_2m_max',i),0),lowLabel:show(point(d,'temperature_2m_min',i),0),\n    rainLabel:show(point(d,'precipitation_sum',i),2),popLabel:show(point(d,'precipitation_probability_max',i),0),\n    gustLabel:show(point(d,'wind_gusts_10m_max',i),0),uvLabel:show(point(d,'uv_index_max',i),1)});\n}\nvar ahead=allDays.filter(x=>x.key>=today).slice(0,7);\nvar recent=allDays.filter(x=>x.key<today).slice(-7);\nvar todays=allDays.find(x=>x.key===today)||ahead[0]||{};\nvar histHour=timeseries(h,'pressure_msl',now-4*3600000,now+120000);\nvar pNow=num(current.pressure_msl);var pPrev=null;for(var j=histHour.length-1;j>=0;j--){if(histHour[j].x<=now-2.5*3600000){pPrev=histHour[j].y;break;}}\nvar pDelta=valid(pNow)&&valid(pPrev)?pNow-pPrev:null;\nvar humidTemp=currT;var wetBulb=null;\nif(valid(humidTemp)&&valid(currRH) && currRH>=5 && currRH<=99 && humidTemp>=32 && humidTemp<=122){\n  var tc=(humidTemp-32)*5/9;var rh=currRH;\n  var wb=tc*Math.atan(0.151977*Math.sqrt(rh+8.313659))+Math.atan(tc+rh)-Math.atan(rh-1.676331)+0.00391838*Math.pow(rh,1.5)*Math.atan(0.023101*rh)-4.686035;\n  wetBulb=wb*9/5+32;\n}\nvar hti=0, cdi=0;recent.forEach(x=>{var m=valid(x.mean)?x.mean:(valid(x.high)&&valid(x.low)?(x.high+x.low)/2:null);if(valid(m)){hti+=Math.max(0,65-m);cdi+=Math.max(0,m-65);}});\nfunction rainSumWindow(hours){var t=list(h,'time'),r=list(h,'precipitation'),s=0;for(var ii=0;ii<t.length;ii++){var xx=utcms(t[ii]);if(xx>now&&xx<=now+hours*3600000&&valid(r[ii]))s+=Number(r[ii]);}return s;}\nfunction popMaxWindow(hours){var t=list(h,'time'),r=list(h,'precipitation_probability'),b=[];for(var ii=0;ii<t.length;ii++){var xx=utcms(t[ii]);if(xx>=now&&xx<=now+hours*3600000)b.push(r[ii]);}return extreme(b,true);}\nvar forecast6=rainSumWindow(6),forecast24=rainSumWindow(24), forecast72=rainSumWindow(72);\nvar todayRain=0;for(var ii=0;ii<list(h,'time').length;ii++){var xx=utcms(h.time[ii]);if(xx<=now&&daykey(xx)===today&&valid(h.precipitation[ii]))todayRain+=Number(h.precipitation[ii]);}\nvar sunRise=valid(todays.sunrise)?hour(todays.sunrise*1000):'—';var sunSet=valid(todays.sunset)?hour(todays.sunset*1000):'—';\nvar aqi=num((aq.current||{}).us_aqi),aqiInfo=aqiBand(aqi);\nvar currentInfo={temp:show(currT,1),feels:show(current.apparent_temperature,1),rh:show(currRH,0),dew:show(current.dew_point_2m,1),\n  pressure:valid(pNow)?show(pNow*0.0295299830714,2):'—',wind:show(currWind,1),gust:show(current.wind_gusts_10m,1),\n  windDir:direction(current.wind_direction_10m),windDeg:num(current.wind_direction_10m)||0,\n  rainfall:show(todayRain,2),cloud:show(current.cloud_cover,0),uv:show(current.uv_index,1),solar:show(current.shortwave_radiation,0),\n  visibility:valid(current.visibility)?show(current.visibility/1609.344,1):'—',\n  vpd:show(current.vapour_pressure_deficit,2),soil:show(current.soil_temperature_0cm,1),soilMoisture:show(current.soil_moisture_0_to_1cm,3),\n  wetBulb:show(wetBulb,1),description:desc.name,icon:desc.icon,day:current.is_day===1,\n  sample:hour(tm)+' • '+date(tm),updatedAge:Math.max(0,Math.floor((now-tm)/60000)),code:cCode};\nvar tiles=[tile('Feels like',currentInfo.feels,'°F','Apparent temperature'),tile('Humidity',currentInfo.rh,'%','Relative humidity'),\n tile('Dew point',currentInfo.dew,'°F','Humidity comfort'),tile('Wind gust',currentInfo.gust,'mph',currentInfo.windDir+' direction'),\n tile('Pressure',currentInfo.pressure,'inHg','3h '+signed(valid(pDelta)?pDelta*0.0295299830714:null,2,' inHg')),\n tile('Model rain today',currentInfo.rainfall,'in','Past modeled hourly totals'),tile('Cloud cover',currentInfo.cloud,'%','Total sky cover'),\n tile('UV index',currentInfo.uv,'','Modeled UV'),tile('Solar radiation',currentInfo.solar,'W/m²','Shortwave irradiance'),\n tile('Visibility',currentInfo.visibility,'mi','Model estimate'),tile('VPD',currentInfo.vpd,'kPa','Vapor-pressure deficit'),\n tile('Wet-bulb est.',currentInfo.wetBulb,'°F','Approximate formula')];\nvar notices=[];function notice(level,title,body){notices.push({level:level,title:title,body:body});}\nif(valid(todays.high)&&todays.high>=100)notice('hot','High-heat outlook','Modeled high '+show(todays.high,0)+'°F today.');\nelse if(valid(todays.high)&&todays.high>=90)notice('warm','Warm afternoon','Modeled high '+show(todays.high,0)+'°F today.');\nif(forecast24>=0.5)notice('rain','Rainfall potential',show(forecast24,2)+' in modeled across the next 24 hours.');\nif(valid(todays.gust)&&todays.gust>=35)notice('wind','Gusty conditions','Modeled daily maximum gust '+show(todays.gust,0)+' mph.');\nif(valid(todays.uv)&&todays.uv>=8)notice('sun','High UV','Modeled UV maximum '+show(todays.uv,1)+'.');\nif(valid(aqi)&&aqi>100)notice('air','Elevated AQI','Modeled AQI '+show(aqi,0)+' ('+aqiInfo.label+').');\nif(!notices.length)notice('calm','No rule-based thresholds exceeded','This does not mean there are no official weather advisories.');\nvar next12=[];for(var ii=0;ii<list(h,'time').length;ii++){var t=utcms(h.time[ii]);if(t>=now&&t<=now+36*3600000 && Math.round((t-now)/3600000)%3===0){var ww=weather(point(h,'weather_code',ii),false);\n next12.push({time:weekday(t)+' '+hour(t),icon:ww.icon,condition:ww.name,temp:show(point(h,'temperature_2m',ii),0),\n feels:show(point(h,'apparent_temperature',ii),0),pop:show(point(h,'precipitation_probability',ii),0),\n rain:show(point(h,'precipitation',ii),2),wind:show(point(h,'wind_speed_10m',ii),0),gust:show(point(h,'wind_gusts_10m',ii),0),\n uv:show(point(h,'uv_index',ii),1)});\n if(next12.length>=12)break;\n}}\nvar archiveDays=[];var ad=ar.daily||{};\nfor(var i=0;i<list(ad,'time').length;i++){\n var ts=utcms(ad.time[i]);var key=typeof ad.time[i]==='number'?new Date(ts+(num(ar.utc_offset_seconds)||0)*1000).toISOString().slice(0,10):String(ad.time[i]).slice(0,10);\n archiveDays.push({key:key,t:ts,high:point(ad,'temperature_2m_max',i),low:point(ad,'temperature_2m_min',i),mean:point(ad,'temperature_2m_mean',i),\n rain:point(ad,'precipitation_sum',i),gust:point(ad,'wind_gusts_10m_max',i),solar:point(ad,'shortwave_radiation_sum',i),et0:point(ad,'et0_fao_evapotranspiration',i)});\n}\nfunction summary(arr){if(!arr.length)return {days:0,high:'—',low:'—',mean:'—',rain:'—',rainy:'—',gust:'—',hdd:'—',cdd:'—',solar:'—',et0:'—'};var tmp=arr.filter(x=>valid(x.high)),rain=arr.map(x=>x.rain),gust=arr.map(x=>x.gust),means=arr.map(x=>x.mean);\n return {days:arr.length,high:show(extreme(tmp.map(x=>x.high),true),0),low:show(extreme(arr.map(x=>x.low),false),0),mean:show(average(means),1),\n rain:show(sum(rain),2),rainy:arr.filter(x=>valid(x.rain)&&x.rain>=0.01).length,\n gust:show(extreme(gust,true),0),hdd:show(sum(means.map(x=>valid(x)?Math.max(0,65-x):null)),0),\n cdd:show(sum(means.map(x=>valid(x)?Math.max(0,x-65):null)),0),solar:show(sum(arr.map(x=>x.solar)),1),et0:show(sum(arr.map(x=>x.et0)),2)};\n}\nvar last30=summary(archiveDays.slice(-30)),last60=summary(archiveDays.slice(-60)),recent7=summary(recent);\nvar aqiCurrent=aq.current||{};\nvar pollutants=[{label:'PM2.5',value:show(aqiCurrent.pm2_5,1),unit:'µg/m³'},\n {label:'PM10',value:show(aqiCurrent.pm10,1),unit:'µg/m³'},\n {label:'Ozone',value:show(aqiCurrent.ozone,1),unit:'µg/m³'},\n {label:'Nitrogen dioxide',value:show(aqiCurrent.nitrogen_dioxide,1),unit:'µg/m³'},\n {label:'Carbon monoxide',value:show(aqiCurrent.carbon_monoxide,1),unit:'µg/m³'},\n {label:'Sulphur dioxide',value:show(aqiCurrent.sulphur_dioxide,1),unit:'µg/m³'}];\nvar stats=[{label:'Next 6h rain',value:show(forecast6,2)+' in'},\n {label:'Next 24h rain',value:show(forecast24,2)+' in'},\n {label:'Next 72h rain',value:show(forecast72,2)+' in'},\n {label:'Max 24h precipitation chance',value:show(popMaxWindow(24),0)+'%'},\n {label:'7-day modeled precipitation',value:show(sum(ahead.map(x=>x.rain)),2)+' in'},\n {label:'7-day max wind gust',value:show(extreme(ahead.map(x=>x.gust),true),0)+' mph'},\n {label:'Past 7-day heating degree days',value:show(hti,1)},\n {label:'Past 7-day cooling degree days',value:show(cdi,1)}];\nvar chartData={};\nvar past=now-7*86400000,soon=now+7*86400000,windowStart=now-24*3600000,windowEnd=now+48*3600000;\nchartData.temp=chartObj(h,[['Temperature °F','temperature_2m'],['Feels like °F','apparent_temperature'],['Dew point °F','dew_point_2m']],windowStart,windowEnd);\nchartData.humidity=chartObj(h,[['Relative humidity %','relative_humidity_2m']],windowStart,windowEnd);\nchartData.pressure=chartObj(h,[['Sea-level pressure hPa','pressure_msl']],past,now+48*3600000);\nchartData.wind=chartObj(h,[['Wind mph','wind_speed_10m'],['Gust mph','wind_gusts_10m']],windowStart,windowEnd);\nchartData.precip=chartObj(h,[['Hourly rainfall in','precipitation']],now-2*86400000,now+72*3600000);\nchartData.pop=chartObj(h,[['Chance of precipitation %','precipitation_probability']],now,now+72*3600000);\nchartData.uv=chartObj(h,[['UV index','uv_index']],windowStart,windowEnd);\nchartData.solar=chartObj(h,[['Solar W/m²','shortwave_radiation']],windowStart,windowEnd);\nchartData.vpd=chartObj(h,[['VPD kPa','vapour_pressure_deficit']],windowStart,windowEnd);\nchartData.soil=chartObj(h,[['Soil temperature °F','soil_temperature_0cm']],past,now+48*3600000);\nchartData.aqi=chartObj(aq.hourly||{},[['US AQI','us_aqi']],now-2*86400000,now+3*86400000);\nchartData.particulate=chartObj(aq.hourly||{},[['PM2.5 µg/m³','pm2_5'],['PM10 µg/m³','pm10']],now-2*86400000,now+3*86400000);\nchartData.dailyTemp=chartDaily(d,[['Daily high °F','temperature_2m_max'],['Daily low °F','temperature_2m_min']],past,soon);\nchartData.dailyRain=chartDaily(d,[['Daily precipitation in','precipitation_sum']],past,soon);\nchartData.climateTemp=chartDaily(ad,[['Daily high °F','temperature_2m_max'],['Daily low °F','temperature_2m_min']],now-78*86400000,now);\nchartData.climateRain=chartDaily(ad,[['Daily rainfall in','precipitation_sum']],now-78*86400000,now);\nchartData.climateWind=chartDaily(ad,[['Daily max gust mph','wind_gusts_10m_max']],now-78*86400000,now);\nvar diagnostics=['forecast','air','archive'].map(k=>{var v=diag[k]||{};return {feed:k==='forecast'?'Open-Meteo Forecast':k==='air'?'Open-Meteo Air Quality':'Open-Meteo Reanalysis',\n state:v.state||'waiting',updated:v.at?date(v.at)+' '+hour(v.at):'Not yet',message:v.message||'Awaiting first fetch',age:v.at?Math.round((now-v.at)/60000)+' min':'—'};});\nvar stationLat = valid(cfg.lat) ? num(cfg.lat) : num(wx.latitude);\nvar stationLon = valid(cfg.lon) ? num(cfg.lon) : num(wx.longitude);\nmsg.payload={meta:{location:cfg.location || 'Example location (edit CONFIG)',lat:stationLat,lon:stationLon,\n source:'Open-Meteo modeled weather data (not local hardware observations)',sourceShort:'OPEN-METEO MODEL',localTime:date(now)+' • '+hour(now),\n apiTime:currentInfo.sample,age:currentInfo.updatedAge,status:diagnostics[0].state,timezone:tz},\n current:currentInfo,tiles:tiles,notices:notices,forecast:ahead,upcoming:next12,statistics:stats,\n sun:{rise:sunRise,set:sunSet,daylight:valid(todays.daylight)?show(todays.daylight/3600,1)+' h':'—'},\n air:{aqi:show(aqi,0),label:aqiInfo.label,color:aqiInfo.color,pollutants:pollutants,updated:aq.current&&aq.current.time?hour(utcms(aq.current.time)):'—'},\n climate:{last30:last30,last60:last60,recent7:recent7,from:archiveDays.length?archiveDays[0].key:'—',to:archiveDays.length?archiveDays[archiveDays.length-1].key:'—',available:archiveDays.length},\n diagnostics:diagnostics,charts:chartData};\nreturn msg;\n",
+    "outputs": 1,
+    "timeout": 0,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 1230,
+    "y": 300,
+    "wires": [
+      [
+        "6d47ab9a9ce8f8d2",
+        "fb6f456225302e10"
+      ]
+    ]
+  },
+  {
+    "id": "6d47ab9a9ce8f8d2",
+    "type": "ui_template",
+    "z": "f1056f43047bcea4",
+    "group": "534df0cfbe905b5c",
+    "name": "WX · single-screen command center",
+    "order": 1,
+    "width": 24,
+    "height": 0,
+    "format": "<div class=\"wx-wrap wx-onepage\" ng-if=\"msg.payload\">\n  <header class=\"wx-topline wx-command-header\">\n    <div>\n      <div class=\"wx-kicker\">WEATHER INTELLIGENCE </div>\n      <h2>Weather Command Center <span class=\"wx-title-id\">{{msg.payload.meta.location}}</span></h2>\n      <div class=\"wx-sub\">{{msg.payload.meta.localTime}} ({{msg.payload.meta.timezone}}) · Weather sample: {{msg.payload.meta.apiTime}}</div>\n    </div>\n    <div class=\"wx-live-tag\"><span class=\"wx-status-light\" ng-class=\"{'wx-status-bad':msg.payload.meta.status!=='ok'}\"></span> Open-Meteo · Modeled conditions </div>\n  </header>\n\n  <div class=\"wx-snapshot\">\n    <div class=\"wx-hero-main wx-snap-weather\">\n      <div class=\"wx-snap-icon\">{{msg.payload.current.icon}}</div>\n      <div class=\"wx-kicker\">Current modeled conditions</div>\n      <div class=\"wx-hero-temp\">{{msg.payload.current.temp}}<span class=\"wx-fahrenheit\">°F</span></div>\n      <div class=\"wx-snap-condition\">{{msg.payload.current.description}}</div>\n      <div class=\"wx-note\">Feels like {{msg.payload.current.feels}}°F · Dew point {{msg.payload.current.dew}}°F</div>\n    </div>\n    <div class=\"wx-panel wx-snap-panel\">\n      <div class=\"wx-kicker\">Wind &amp; gusts</div>\n      <div class=\"wx-wind wx-snap-wind\"><div class=\"wx-compass\"><span class=\"wx-arrow\" ng-style=\"{'transform':'rotate(' + msg.payload.current.windDeg + 'deg)'}\">↑</span></div>\n        <div><div class=\"wx-big\">{{msg.payload.current.wind}}<small> mph</small></div><div class=\"wx-note\">From {{msg.payload.current.windDir}}</div><div class=\"wx-note\">Gust {{msg.payload.current.gust}} mph</div></div>\n      </div>\n    </div>\n    <div class=\"wx-panel wx-snap-panel\">\n      <div class=\"wx-kicker\">Sun, rain &amp; UV</div>\n      <div class=\"wx-sunstrip\"><div><div class=\"wx-label\">Sunrise</div><div class=\"wx-snap-number\">{{msg.payload.sun.rise}}</div></div><div><div class=\"wx-label\">Sunset</div><div class=\"wx-snap-number\">{{msg.payload.sun.set}}</div></div></div>\n      <div class=\"wx-sunstrip\"><div><div class=\"wx-label\">Rain today</div><div class=\"wx-snap-number\">{{msg.payload.current.rainfall}} <small>in</small></div></div><div><div class=\"wx-label\">UV index</div><div class=\"wx-snap-number\">{{msg.payload.current.uv}}</div></div></div>\n    </div>\n    <div class=\"wx-panel wx-snap-panel\">\n      <div class=\"wx-kicker\">Air Quality • modeled</div>\n      <div class=\"wx-air wx-snap-air\"><div class=\"wx-aqi-number\" ng-style=\"{'color':msg.payload.air.color}\">{{msg.payload.air.aqi}}</div><div><div class=\"wx-label\">U.S. AQI</div><div class=\"wx-snap-number\">{{msg.payload.air.label}}</div></div></div>\n      <div class=\"wx-sunstrip\"><div><div class=\"wx-label\">PM2.5</div><div class=\"wx-snap-number\">{{msg.payload.air.pollutants[0].value}} <small>µg/m³</small></div></div><div><div class=\"wx-label\">PM10</div><div class=\"wx-snap-number\">{{msg.payload.air.pollutants[1].value}} <small>µg/m³</small></div></div></div>\n    </div>\n  </div>\n\n  <div class=\"wx-section wx-compact-section\">\n    <div class=\"wx-section-title\"><h3>Current atmospheric measurements <span class=\"wx-sub\">— Open-Meteo model output / derived indicators</span></h3></div>\n    <div class=\"wx-tiles wx-dense-tiles\"><div class=\"wx-tile\" ng-repeat=\"t in msg.payload.tiles track by $index\"><div class=\"wx-label\">{{t.label}}</div><div class=\"wx-value\">{{t.value}}<span class=\"wx-unit\">{{t.unit}}</span></div><div class=\"wx-mini\">{{t.note}}</div></div></div>\n  </div>\n\n  <div class=\"wx-compact-columns wx-section\">\n    <div class=\"wx-panel wx-compact-panel\">\n      <h3>Weather intelligence <span class=\"wx-sub\">/ automated thresholds, not NWS alerts</span></h3>\n      <div class=\"wx-compact-insights\"><div class=\"wx-alert\" ng-class=\"a.level\" ng-repeat=\"a in msg.payload.notices track by $index\"><strong>{{a.title}}</strong><p>{{a.body}}</p></div></div>\n      <div class=\"wx-faststats\"><div ng-repeat=\"a in msg.payload.statistics.slice(0,4) track by $index\"><span class=\"wx-label\">{{a.label}}</span><strong>{{a.value}}</strong></div></div>\n    </div>\n    <div class=\"wx-panel wx-compact-panel\">\n      <h3>7-day climate &amp; forecast indicators</h3>\n      <div class=\"wx-faststats\"><div ng-repeat=\"a in msg.payload.statistics.slice(4,8) track by $index\"><span class=\"wx-label\">{{a.label}}</span><strong>{{a.value}}</strong></div></div>\n      <div class=\"wx-archive-strip\">\n        <div><span class=\"wx-label\">30d rain (archive)</span><strong>{{msg.payload.climate.last30.rain}} in</strong></div>\n        <div><span class=\"wx-label\">60d rain (archive)</span><strong>{{msg.payload.climate.last60.rain}} in</strong></div>\n        <div><span class=\"wx-label\">30d mean (archive)</span><strong>{{msg.payload.climate.last30.mean}}°F</strong></div>\n      </div>\n      <p class=\"wx-mini\">Archived daily reanalysis ends {{msg.payload.climate.to}} and is not combined with recent forecast-model history.</p>\n    </div>\n  </div>\n\n  <div class=\"wx-section wx-compact-section\">\n    <h3>Seven-day outlook <span class=\"wx-sub\">/ highs, lows, rainfall probability, precipitation, gusts and UV</span></h3>\n    <div class=\"wx-dayrows wx-compact-days\"><div class=\"wx-day\" ng-repeat=\"d in msg.payload.forecast track by $index\"><h4>{{d.label}}</h4><div class=\"wx-mini\">{{d.date}}</div><div class=\"wx-dayicon\">{{d.icon}}</div><div class=\"wx-temps\">{{d.highLabel}}° <span>{{d.lowLabel}}°</span></div><div class=\"wx-mini wx-condition\">{{d.conditions}}</div><div class=\"wx-details\">☔ {{d.popLabel}}% · {{d.rainLabel}} in</div><div class=\"wx-details\">💨 {{d.gustLabel}} mph gust</div><div class=\"wx-details\">☀ UV {{d.uvLabel}}</div></div></div>\n  </div>\n\n  <div class=\"wx-expanders\">\n    <details class=\"wx-expand\">\n      <summary>Detailed hourly forecast <span>Next 36 hours · temperature, precipitation, wind, UV</span></summary>\n      <div class=\"wx-table-wrap\"><table><thead><tr><th>Local time</th><th>Conditions</th><th>Temp</th><th>Feels</th><th>Rain chance</th><th>Rain</th><th>Wind</th><th>Gust</th><th>UV</th></tr></thead><tbody><tr ng-repeat=\"r in msg.payload.upcoming track by $index\"><td>{{r.time}}</td><td>{{r.icon}} {{r.condition}}</td><td>{{r.temp}}°F</td><td>{{r.feels}}°F</td><td>{{r.pop}}%</td><td>{{r.rain}} in</td><td>{{r.wind}} mph</td><td>{{r.gust}} mph</td><td>{{r.uv}}</td></tr></tbody></table></div>\n    </details>\n    <details class=\"wx-expand\">\n      <summary>Air quality details <span>AQI, PM2.5, PM10, ozone and trace gases</span></summary>\n      <div class=\"wx-pollutants wx-compact-pollutants\"><div class=\"wx-tile\" ng-repeat=\"p in msg.payload.air.pollutants track by $index\"><div class=\"wx-label\">{{p.label}}</div><div class=\"wx-value\">{{p.value}} <span class=\"wx-unit\">{{p.unit}}</span></div></div></div>\n      <p class=\"wx-foot\">Modeled regional estimates. AQI model hour: {{msg.payload.air.updated}}.</p>\n    </details>\n    <details class=\"wx-expand\">\n      <summary>30- and 60-day historical climate <span>Rainfall, temperature records, degree days</span></summary>\n      <div class=\"wx-grid2 wx-history-grid\"><div class=\"wx-panel\"><h3>Last 30 archived days</h3><div class=\"wx-history-stats\"><div><span>High / Low</span><strong>{{msg.payload.climate.last30.high}}° / {{msg.payload.climate.last30.low}}°F</strong></div><div><span>Mean</span><strong>{{msg.payload.climate.last30.mean}}°F</strong></div><div><span>Total rainfall</span><strong>{{msg.payload.climate.last30.rain}} in</strong></div><div><span>Rainy days</span><strong>{{msg.payload.climate.last30.rainy}}</strong></div><div><span>Max gust</span><strong>{{msg.payload.climate.last30.gust}} mph</strong></div></div></div><div class=\"wx-panel\"><h3>Last 60 archived days</h3><div class=\"wx-history-stats\"><div><span>High / Low</span><strong>{{msg.payload.climate.last60.high}}° / {{msg.payload.climate.last60.low}}°F</strong></div><div><span>Mean</span><strong>{{msg.payload.climate.last60.mean}}°F</strong></div><div><span>Total rainfall</span><strong>{{msg.payload.climate.last60.rain}} in</strong></div><div><span>Rainy days</span><strong>{{msg.payload.climate.last60.rainy}}</strong></div><div><span>HDD / CDD (65°F)</span><strong>{{msg.payload.climate.last60.hdd}} / {{msg.payload.climate.last60.cdd}}</strong></div></div></div></div>\n      <p class=\"wx-foot\">Archive window: {{msg.payload.climate.from}} – {{msg.payload.climate.to}} ({{msg.payload.climate.available}} days). Recent 7-day model history: high {{msg.payload.climate.recent7.high}}°F, low {{msg.payload.climate.recent7.low}}°F, precipitation {{msg.payload.climate.recent7.rain}} in, highest gust {{msg.payload.climate.recent7.gust}} mph. The climate archive is intentionally delayed by eight days.</p>\n    </details>\n    <details class=\"wx-expand\">\n      <summary>Diagnostics &amp; data attribution <span>Freshness and any API errors</span></summary>\n      <div class=\"wx-diagnostic\" ng-repeat=\"d in msg.payload.diagnostics track by $index\"><div><strong>{{d.feed}}</strong><div class=\"wx-mini\">{{d.message}}</div><div class=\"wx-note\">Last request: {{d.updated}} · {{d.age}} old</div></div><strong ng-class=\"{'wx-ok':d.state==='ok','wx-err':d.state!=='ok'}\">{{d.state | uppercase}}</strong></div>\n      <div class=\"wx-note\">Refresh schedules: Weather every 10 minutes · Air quality every 30 minutes · Lagged historical archive every 6 hours. Requests originate from Node-RED; failures may retain last successful values.</div>\n    </details>\n  </div>\n  <p class=\"wx-foot wx-provenance\"><strong>Source integrity:</strong> Weather, air quality and historical climate shown here are Open-Meteo model estimates, reanalysis or derived statistics. See the Trends, Forecast, Air Quality and Climate dashboard tabs for all 17 time-series charts.</p>\n</div>\n",
+    "storeOutMessages": false,
+    "fwdInMessages": false,
+    "resendOnRefresh": true,
+    "templateScope": "local",
+    "className": "wx-view-overview",
+    "x": 1540,
+    "y": 130,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "fb6f456225302e10",
+    "type": "function",
+    "z": "f1056f43047bcea4",
+    "name": "Route 17 charts | 1:1 mapping",
+    "func": "// One output per chart, in the same order as chartKeys and the wires below.\n// Kept explicit to avoid off-by-one errors during GitHub modifications.\nconst data = (msg.payload || {}).charts || {};\nconst chartKeys = [\n    'temp', 'humidity', 'pressure', 'wind', 'precip', 'pop',\n    'uv', 'solar', 'vpd', 'soil', 'dailyTemp', 'dailyRain',\n    'aqi', 'particulate', 'climateTemp', 'climateRain', 'climateWind'\n];\nreturn chartKeys.map(k => {\n    const series = data[k];\n    return (Array.isArray(series) && series[0] && Array.isArray(series[0].data) &&\n        series[0].data.some(points => Array.isArray(points) && points.length > 0))\n        ? {payload: series} : null;\n});",
+    "outputs": 17,
+    "timeout": 0,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 1480,
+    "y": 805,
+    "wires": [
+      [
+        "20e2715446048854"
+      ],
+      [
+        "670360aa1e561ef6"
+      ],
+      [
+        "e0dd5f6ffe2a9fb2"
+      ],
+      [
+        "9597bfce5abee71b"
+      ],
+      [
+        "d93fabcd497c4ca9"
+      ],
+      [
+        "dd650770acca4886"
+      ],
+      [
+        "0988caf355c8d9dc"
+      ],
+      [
+        "5b45c1d4a63802d2"
+      ],
+      [
+        "f5cae267a945265d"
+      ],
+      [
+        "45e057e7800688e0"
+      ],
+      [
+        "925b83ed0d7e2e8e"
+      ],
+      [
+        "ef679524f07142b0"
+      ],
+      [
+        "1fa23752de0595ac"
+      ],
+      [
+        "b46a21980532c48c"
+      ],
+      [
+        "7c2a16809be0255b"
+      ],
+      [
+        "b17f5452dafdfc1b"
+      ],
+      [
+        "e5ce912e9d22c6f6"
+      ]
+    ]
+  },
+  {
+    "id": "20e2715446048854",
+    "type": "ui_chart",
+    "z": "f1056f43047bcea4",
+    "name": "WX chart · temp",
+    "group": "f4be5eb0261d5c5f",
+    "order": 1,
+    "width": 8,
+    "height": 4,
+    "label": "Temperature / feels like / dew point",
+    "chartType": "line",
+    "legend": "true",
+    "xformat": "MM/DD HH:mm",
+    "interpolate": "linear",
+    "nodata": "Waiting for Open-Meteo data…",
+    "dot": false,
+    "ymin": "",
+    "ymax": "",
+    "removeOlder": 90,
+    "removeOlderPoints": "",
+    "removeOlderUnit": "86400",
+    "cutout": 0,
+    "useOneColor": false,
+    "colors": [
+      "#5dd6f4",
+      "#edc979",
+      "#a0d9a7",
+      "#b794f4",
+      "#f78184",
+      "#7ac6bb",
+      "#7f97f6",
+      "#d7b68a",
+      "#d36e95"
+    ],
+    "outputs": 1,
+    "useDifferentColor": false,
+    "className": "wx-chart",
+    "x": 1770,
+    "y": 830,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "670360aa1e561ef6",
+    "type": "ui_chart",
+    "z": "f1056f43047bcea4",
+    "name": "WX chart · humidity",
+    "group": "f4be5eb0261d5c5f",
+    "order": 2,
+    "width": 8,
+    "height": 4,
+    "label": "Humidity",
+    "chartType": "line",
+    "legend": "true",
+    "xformat": "MM/DD HH:mm",
+    "interpolate": "linear",
+    "nodata": "Waiting for Open-Meteo data…",
+    "dot": false,
+    "ymin": "",
+    "ymax": "",
+    "removeOlder": 90,
+    "removeOlderPoints": "",
+    "removeOlderUnit": "86400",
+    "cutout": 0,
+    "useOneColor": false,
+    "colors": [
+      "#5dd6f4",
+      "#edc979",
+      "#a0d9a7",
+      "#b794f4",
+      "#f78184",
+      "#7ac6bb",
+      "#7f97f6",
+      "#d7b68a",
+      "#d36e95"
+    ],
+    "outputs": 1,
+    "useDifferentColor": false,
+    "className": "wx-chart",
+    "x": 1770,
+    "y": 877,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "e0dd5f6ffe2a9fb2",
+    "type": "ui_chart",
+    "z": "f1056f43047bcea4",
+    "name": "WX chart · pressure",
+    "group": "f4be5eb0261d5c5f",
+    "order": 3,
+    "width": 8,
+    "height": 4,
+    "label": "Sea-level pressure trend",
+    "chartType": "line",
+    "legend": "true",
+    "xformat": "MM/DD HH:mm",
+    "interpolate": "linear",
+    "nodata": "Waiting for Open-Meteo data…",
+    "dot": false,
+    "ymin": "",
+    "ymax": "",
+    "removeOlder": 90,
+    "removeOlderPoints": "",
+    "removeOlderUnit": "86400",
+    "cutout": 0,
+    "useOneColor": false,
+    "colors": [
+      "#5dd6f4",
+      "#edc979",
+      "#a0d9a7",
+      "#b794f4",
+      "#f78184",
+      "#7ac6bb",
+      "#7f97f6",
+      "#d7b68a",
+      "#d36e95"
+    ],
+    "outputs": 1,
+    "useDifferentColor": false,
+    "className": "wx-chart",
+    "x": 1770,
+    "y": 924,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "9597bfce5abee71b",
+    "type": "ui_chart",
+    "z": "f1056f43047bcea4",
+    "name": "WX chart · wind",
+    "group": "6d6b940ea19f5b37",
+    "order": 1,
+    "width": 8,
+    "height": 4,
+    "label": "Wind and gusts",
+    "chartType": "line",
+    "legend": "true",
+    "xformat": "MM/DD HH:mm",
+    "interpolate": "linear",
+    "nodata": "Waiting for Open-Meteo data…",
+    "dot": false,
+    "ymin": "",
+    "ymax": "",
+    "removeOlder": 90,
+    "removeOlderPoints": "",
+    "removeOlderUnit": "86400",
+    "cutout": 0,
+    "useOneColor": false,
+    "colors": [
+      "#5dd6f4",
+      "#edc979",
+      "#a0d9a7",
+      "#b794f4",
+      "#f78184",
+      "#7ac6bb",
+      "#7f97f6",
+      "#d7b68a",
+      "#d36e95"
+    ],
+    "outputs": 1,
+    "useDifferentColor": false,
+    "className": "wx-chart",
+    "x": 1770,
+    "y": 971,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "d93fabcd497c4ca9",
+    "type": "ui_chart",
+    "z": "f1056f43047bcea4",
+    "name": "WX chart · precip",
+    "group": "6d6b940ea19f5b37",
+    "order": 2,
+    "width": 8,
+    "height": 4,
+    "label": "Hourly precipitation",
+    "chartType": "bar",
+    "legend": "false",
+    "xformat": "MM/DD HH:mm",
+    "interpolate": "linear",
+    "nodata": "Waiting for Open-Meteo data…",
+    "dot": false,
+    "ymin": "",
+    "ymax": "",
+    "removeOlder": 90,
+    "removeOlderPoints": "",
+    "removeOlderUnit": "86400",
+    "cutout": 0,
+    "useOneColor": false,
+    "colors": [
+      "#5dd6f4",
+      "#edc979",
+      "#a0d9a7",
+      "#b794f4",
+      "#f78184",
+      "#7ac6bb",
+      "#7f97f6",
+      "#d7b68a",
+      "#d36e95"
+    ],
+    "outputs": 1,
+    "useDifferentColor": false,
+    "className": "wx-chart",
+    "x": 1770,
+    "y": 1018,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "dd650770acca4886",
+    "type": "ui_chart",
+    "z": "f1056f43047bcea4",
+    "name": "WX chart · pop",
+    "group": "6d6b940ea19f5b37",
+    "order": 3,
+    "width": 8,
+    "height": 4,
+    "label": "Precipitation probability",
+    "chartType": "line",
+    "legend": "true",
+    "xformat": "MM/DD HH:mm",
+    "interpolate": "linear",
+    "nodata": "Waiting for Open-Meteo data…",
+    "dot": false,
+    "ymin": "",
+    "ymax": "",
+    "removeOlder": 90,
+    "removeOlderPoints": "",
+    "removeOlderUnit": "86400",
+    "cutout": 0,
+    "useOneColor": false,
+    "colors": [
+      "#5dd6f4",
+      "#edc979",
+      "#a0d9a7",
+      "#b794f4",
+      "#f78184",
+      "#7ac6bb",
+      "#7f97f6",
+      "#d7b68a",
+      "#d36e95"
+    ],
+    "outputs": 1,
+    "useDifferentColor": false,
+    "className": "wx-chart",
+    "x": 1770,
+    "y": 1065,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "0988caf355c8d9dc",
+    "type": "ui_chart",
+    "z": "f1056f43047bcea4",
+    "name": "WX chart · uv",
+    "group": "ca5fe46254025f79",
+    "order": 1,
+    "width": 8,
+    "height": 4,
+    "label": "UV index",
+    "chartType": "line",
+    "legend": "true",
+    "xformat": "MM/DD HH:mm",
+    "interpolate": "linear",
+    "nodata": "Waiting for Open-Meteo data…",
+    "dot": false,
+    "ymin": "",
+    "ymax": "",
+    "removeOlder": 90,
+    "removeOlderPoints": "",
+    "removeOlderUnit": "86400",
+    "cutout": 0,
+    "useOneColor": false,
+    "colors": [
+      "#5dd6f4",
+      "#edc979",
+      "#a0d9a7",
+      "#b794f4",
+      "#f78184",
+      "#7ac6bb",
+      "#7f97f6",
+      "#d7b68a",
+      "#d36e95"
+    ],
+    "outputs": 1,
+    "useDifferentColor": false,
+    "className": "wx-chart",
+    "x": 1770,
+    "y": 1112,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "5b45c1d4a63802d2",
+    "type": "ui_chart",
+    "z": "f1056f43047bcea4",
+    "name": "WX chart · solar",
+    "group": "ca5fe46254025f79",
+    "order": 2,
+    "width": 8,
+    "height": 4,
+    "label": "Solar radiation",
+    "chartType": "line",
+    "legend": "true",
+    "xformat": "MM/DD HH:mm",
+    "interpolate": "linear",
+    "nodata": "Waiting for Open-Meteo data…",
+    "dot": false,
+    "ymin": "",
+    "ymax": "",
+    "removeOlder": 90,
+    "removeOlderPoints": "",
+    "removeOlderUnit": "86400",
+    "cutout": 0,
+    "useOneColor": false,
+    "colors": [
+      "#5dd6f4",
+      "#edc979",
+      "#a0d9a7",
+      "#b794f4",
+      "#f78184",
+      "#7ac6bb",
+      "#7f97f6",
+      "#d7b68a",
+      "#d36e95"
+    ],
+    "outputs": 1,
+    "useDifferentColor": false,
+    "className": "wx-chart",
+    "x": 1770,
+    "y": 1159,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "f5cae267a945265d",
+    "type": "ui_chart",
+    "z": "f1056f43047bcea4",
+    "name": "WX chart · vpd",
+    "group": "ca5fe46254025f79",
+    "order": 3,
+    "width": 8,
+    "height": 4,
+    "label": "Vapor-pressure deficit",
+    "chartType": "line",
+    "legend": "true",
+    "xformat": "MM/DD HH:mm",
+    "interpolate": "linear",
+    "nodata": "Waiting for Open-Meteo data…",
+    "dot": false,
+    "ymin": "",
+    "ymax": "",
+    "removeOlder": 90,
+    "removeOlderPoints": "",
+    "removeOlderUnit": "86400",
+    "cutout": 0,
+    "useOneColor": false,
+    "colors": [
+      "#5dd6f4",
+      "#edc979",
+      "#a0d9a7",
+      "#b794f4",
+      "#f78184",
+      "#7ac6bb",
+      "#7f97f6",
+      "#d7b68a",
+      "#d36e95"
+    ],
+    "outputs": 1,
+    "useDifferentColor": false,
+    "className": "wx-chart",
+    "x": 1770,
+    "y": 1206,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "45e057e7800688e0",
+    "type": "ui_chart",
+    "z": "f1056f43047bcea4",
+    "name": "WX chart · soil",
+    "group": "ca5fe46254025f79",
+    "order": 4,
+    "width": 8,
+    "height": 4,
+    "label": "Near-surface soil temperature",
+    "chartType": "line",
+    "legend": "true",
+    "xformat": "MM/DD HH:mm",
+    "interpolate": "linear",
+    "nodata": "Waiting for Open-Meteo data…",
+    "dot": false,
+    "ymin": "",
+    "ymax": "",
+    "removeOlder": 90,
+    "removeOlderPoints": "",
+    "removeOlderUnit": "86400",
+    "cutout": 0,
+    "useOneColor": false,
+    "colors": [
+      "#5dd6f4",
+      "#edc979",
+      "#a0d9a7",
+      "#b794f4",
+      "#f78184",
+      "#7ac6bb",
+      "#7f97f6",
+      "#d7b68a",
+      "#d36e95"
+    ],
+    "outputs": 1,
+    "useDifferentColor": false,
+    "className": "wx-chart",
+    "x": 1770,
+    "y": 1253,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "925b83ed0d7e2e8e",
+    "type": "ui_chart",
+    "z": "f1056f43047bcea4",
+    "name": "WX chart · dailyTemp",
+    "group": "8cebfe0466d15035",
+    "order": 1,
+    "width": 8,
+    "height": 4,
+    "label": "Past + next 7 days: highs/lows",
+    "chartType": "line",
+    "legend": "true",
+    "xformat": "MM/DD HH:mm",
+    "interpolate": "linear",
+    "nodata": "Waiting for Open-Meteo data…",
+    "dot": false,
+    "ymin": "",
+    "ymax": "",
+    "removeOlder": 90,
+    "removeOlderPoints": "",
+    "removeOlderUnit": "86400",
+    "cutout": 0,
+    "useOneColor": false,
+    "colors": [
+      "#5dd6f4",
+      "#edc979",
+      "#a0d9a7",
+      "#b794f4",
+      "#f78184",
+      "#7ac6bb",
+      "#7f97f6",
+      "#d7b68a",
+      "#d36e95"
+    ],
+    "outputs": 1,
+    "useDifferentColor": false,
+    "className": "wx-chart",
+    "x": 1770,
+    "y": 1300,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "ef679524f07142b0",
+    "type": "ui_chart",
+    "z": "f1056f43047bcea4",
+    "name": "WX chart · dailyRain",
+    "group": "8cebfe0466d15035",
+    "order": 2,
+    "width": 8,
+    "height": 4,
+    "label": "Past + next 7 days: precipitation",
+    "chartType": "bar",
+    "legend": "false",
+    "xformat": "MM/DD HH:mm",
+    "interpolate": "linear",
+    "nodata": "Waiting for Open-Meteo data…",
+    "dot": false,
+    "ymin": "",
+    "ymax": "",
+    "removeOlder": 90,
+    "removeOlderPoints": "",
+    "removeOlderUnit": "86400",
+    "cutout": 0,
+    "useOneColor": false,
+    "colors": [
+      "#5dd6f4",
+      "#edc979",
+      "#a0d9a7",
+      "#b794f4",
+      "#f78184",
+      "#7ac6bb",
+      "#7f97f6",
+      "#d7b68a",
+      "#d36e95"
+    ],
+    "outputs": 1,
+    "useDifferentColor": false,
+    "className": "wx-chart",
+    "x": 1770,
+    "y": 1347,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "1fa23752de0595ac",
+    "type": "ui_chart",
+    "z": "f1056f43047bcea4",
+    "name": "WX chart · aqi",
+    "group": "4d04a63838d050df",
+    "order": 1,
+    "width": 8,
+    "height": 4,
+    "label": "US AQI trend / forecast",
+    "chartType": "line",
+    "legend": "true",
+    "xformat": "MM/DD HH:mm",
+    "interpolate": "linear",
+    "nodata": "Waiting for Open-Meteo data…",
+    "dot": false,
+    "ymin": "",
+    "ymax": "",
+    "removeOlder": 90,
+    "removeOlderPoints": "",
+    "removeOlderUnit": "86400",
+    "cutout": 0,
+    "useOneColor": false,
+    "colors": [
+      "#5dd6f4",
+      "#edc979",
+      "#a0d9a7",
+      "#b794f4",
+      "#f78184",
+      "#7ac6bb",
+      "#7f97f6",
+      "#d7b68a",
+      "#d36e95"
+    ],
+    "outputs": 1,
+    "useDifferentColor": false,
+    "className": "wx-chart",
+    "x": 1770,
+    "y": 1394,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "b46a21980532c48c",
+    "type": "ui_chart",
+    "z": "f1056f43047bcea4",
+    "name": "WX chart · particulate",
+    "group": "4d04a63838d050df",
+    "order": 2,
+    "width": 8,
+    "height": 4,
+    "label": "PM2.5 + PM10 concentration",
+    "chartType": "line",
+    "legend": "true",
+    "xformat": "MM/DD HH:mm",
+    "interpolate": "linear",
+    "nodata": "Waiting for Open-Meteo data…",
+    "dot": false,
+    "ymin": "",
+    "ymax": "",
+    "removeOlder": 90,
+    "removeOlderPoints": "",
+    "removeOlderUnit": "86400",
+    "cutout": 0,
+    "useOneColor": false,
+    "colors": [
+      "#5dd6f4",
+      "#edc979",
+      "#a0d9a7",
+      "#b794f4",
+      "#f78184",
+      "#7ac6bb",
+      "#7f97f6",
+      "#d7b68a",
+      "#d36e95"
+    ],
+    "outputs": 1,
+    "useDifferentColor": false,
+    "className": "wx-chart",
+    "x": 1770,
+    "y": 1441,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "7c2a16809be0255b",
+    "type": "ui_chart",
+    "z": "f1056f43047bcea4",
+    "name": "WX chart · climateTemp",
+    "group": "c53539ae96885906",
+    "order": 1,
+    "width": 8,
+    "height": 4,
+    "label": "60-day archived highs/lows",
+    "chartType": "line",
+    "legend": "true",
+    "xformat": "MMM D",
+    "interpolate": "linear",
+    "nodata": "Waiting for Open-Meteo data…",
+    "dot": false,
+    "ymin": "",
+    "ymax": "",
+    "removeOlder": 90,
+    "removeOlderPoints": "",
+    "removeOlderUnit": "86400",
+    "cutout": 0,
+    "useOneColor": false,
+    "colors": [
+      "#5dd6f4",
+      "#edc979",
+      "#a0d9a7",
+      "#b794f4",
+      "#f78184",
+      "#7ac6bb",
+      "#7f97f6",
+      "#d7b68a",
+      "#d36e95"
+    ],
+    "outputs": 1,
+    "useDifferentColor": false,
+    "className": "wx-chart",
+    "x": 1770,
+    "y": 1488,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "b17f5452dafdfc1b",
+    "type": "ui_chart",
+    "z": "f1056f43047bcea4",
+    "name": "WX chart · climateRain",
+    "group": "c53539ae96885906",
+    "order": 2,
+    "width": 8,
+    "height": 4,
+    "label": "60-day archived daily rainfall",
+    "chartType": "bar",
+    "legend": "false",
+    "xformat": "MMM D",
+    "interpolate": "linear",
+    "nodata": "Waiting for Open-Meteo data…",
+    "dot": false,
+    "ymin": "",
+    "ymax": "",
+    "removeOlder": 90,
+    "removeOlderPoints": "",
+    "removeOlderUnit": "86400",
+    "cutout": 0,
+    "useOneColor": false,
+    "colors": [
+      "#5dd6f4",
+      "#edc979",
+      "#a0d9a7",
+      "#b794f4",
+      "#f78184",
+      "#7ac6bb",
+      "#7f97f6",
+      "#d7b68a",
+      "#d36e95"
+    ],
+    "outputs": 1,
+    "useDifferentColor": false,
+    "className": "wx-chart",
+    "x": 1770,
+    "y": 1535,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "e5ce912e9d22c6f6",
+    "type": "ui_chart",
+    "z": "f1056f43047bcea4",
+    "name": "WX chart · climateWind",
+    "group": "c53539ae96885906",
+    "order": 3,
+    "width": 8,
+    "height": 4,
+    "label": "60-day archived max gusts",
+    "chartType": "line",
+    "legend": "true",
+    "xformat": "MMM D",
+    "interpolate": "linear",
+    "nodata": "Waiting for Open-Meteo data…",
+    "dot": false,
+    "ymin": "",
+    "ymax": "",
+    "removeOlder": 90,
+    "removeOlderPoints": "",
+    "removeOlderUnit": "86400",
+    "cutout": 0,
+    "useOneColor": false,
+    "colors": [
+      "#5dd6f4",
+      "#edc979",
+      "#a0d9a7",
+      "#b794f4",
+      "#f78184",
+      "#7ac6bb",
+      "#7f97f6",
+      "#d7b68a",
+      "#d36e95"
+    ],
+    "outputs": 1,
+    "useDifferentColor": false,
+    "className": "wx-chart",
+    "x": 1770,
+    "y": 1582,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "c06bbfccfb8bc4d0",
+    "type": "ui_button",
+    "z": "f1056f43047bcea4",
+    "name": "Manual fetch forecast",
+    "group": "192c43f0d1b859ef",
+    "order": 3,
+    "width": 8,
+    "height": 1,
+    "passthru": false,
+    "label": "Update weather",
+    "color": "#ffffff",
+    "bgcolor": "#1c4b6c",
+    "icon": "refresh",
+    "payload": "forecast",
+    "payloadType": "str",
+    "topic": "forecast",
+    "topicType": "str",
+    "x": 140,
+    "y": 680,
+    "wires": [
+      [
+        "6a13e0b9e59eab2e"
+      ]
+    ]
+  },
+  {
+    "id": "18bba43b23070e64",
+    "type": "ui_button",
+    "z": "f1056f43047bcea4",
+    "name": "Manual fetch air",
+    "group": "192c43f0d1b859ef",
+    "order": 4,
+    "width": 8,
+    "height": 1,
+    "passthru": false,
+    "label": "Update air quality",
+    "color": "#ffffff",
+    "bgcolor": "#1c4b6c",
+    "icon": "refresh",
+    "payload": "air",
+    "payloadType": "str",
+    "topic": "air",
+    "topicType": "str",
+    "x": 140,
+    "y": 735,
+    "wires": [
+      [
+        "6a13e0b9e59eab2e"
+      ]
+    ]
+  },
+  {
+    "id": "c24d23be1d396e9c",
+    "type": "ui_button",
+    "z": "f1056f43047bcea4",
+    "name": "Manual fetch archive",
+    "group": "192c43f0d1b859ef",
+    "order": 5,
+    "width": 8,
+    "height": 1,
+    "passthru": false,
+    "label": "Update archive",
+    "color": "#ffffff",
+    "bgcolor": "#1c4b6c",
+    "icon": "refresh",
+    "payload": "archive",
+    "payloadType": "str",
+    "topic": "archive",
+    "topicType": "str",
+    "x": 140,
+    "y": 790,
+    "wires": [
+      [
+        "6a13e0b9e59eab2e"
+      ]
+    ]
+  },
+  {
+    "id": "f0dee9d783d89814",
+    "type": "comment",
+    "z": "f1056f43047bcea4",
+    "name": "README FIRST | Configure location before use",
+    "info": "Open-Meteo MODEL DATA (not a local Tempest or other weather station feed). Edit DEFAULTS in CONFIG or set WX_LAT, WX_LON, WX_TIMEZONE and WX_LABEL. Example defaults target New York City; dashboard unit labels assume Fahrenheit/mph/inches. Dashboard 1.0 (node-red-dashboard 3.6.6), NOT Dashboard 2.0. The overview is a single-screen command center; 17 detailed charts are on supporting tabs.",
+    "x": 285,
+    "y": 100,
+    "wires": []
+  },
+  {
+    "id": "534df0cfbe905b5c",
+    "type": "ui_group",
+    "name": "Neighborhood Weather Intelligence",
+    "tab": "ecc97b7238155946",
+    "order": 1,
+    "disp": true,
+    "width": "24",
+    "collapse": false,
+    "className": ""
+  },
+  {
+    "id": "f4be5eb0261d5c5f",
+    "type": "ui_group",
+    "name": "Temperature, Humidity and Pressure",
+    "tab": "96eb0a36fe2f56ff",
+    "order": 1,
+    "disp": true,
+    "width": "12",
+    "collapse": false
+  },
+  {
+    "id": "6d6b940ea19f5b37",
+    "type": "ui_group",
+    "name": "Wind, Rain and Precipitation",
+    "tab": "96eb0a36fe2f56ff",
+    "order": 2,
+    "disp": true,
+    "width": "12",
+    "collapse": false
+  },
+  {
+    "id": "ca5fe46254025f79",
+    "type": "ui_group",
+    "name": "Solar, UV and Soil",
+    "tab": "96eb0a36fe2f56ff",
+    "order": 3,
+    "disp": true,
+    "width": "12",
+    "collapse": false
+  },
+  {
+    "id": "8cebfe0466d15035",
+    "type": "ui_group",
+    "name": "Forecast Time Series",
+    "tab": "57a584545f685f80",
+    "order": 2,
+    "disp": true,
+    "width": "12",
+    "collapse": false
+  },
+  {
+    "id": "4d04a63838d050df",
+    "type": "ui_group",
+    "name": "AQI and Particle Trends",
+    "tab": "631da647215a5709",
+    "order": 2,
+    "disp": true,
+    "width": "12",
+    "collapse": false
+  },
+  {
+    "id": "c53539ae96885906",
+    "type": "ui_group",
+    "name": "60-Day Climate Trends",
+    "tab": "ac9ec2afd8fc506b",
+    "order": 2,
+    "disp": true,
+    "width": "12",
+    "collapse": false
+  },
+  {
+    "id": "192c43f0d1b859ef",
+    "type": "ui_group",
+    "name": "Diagnostics and Provenance",
+    "tab": "a84940fd76dd5c3a",
+    "order": 1,
+    "disp": true,
+    "width": "12",
+    "collapse": false
+  },
+  {
+    "id": "ecc97b7238155946",
+    "type": "ui_tab",
+    "name": "WX · Overview",
+    "icon": "dashboard",
+    "order": 1,
+    "disabled": false,
+    "hidden": false
+  },
+  {
+    "id": "96eb0a36fe2f56ff",
+    "type": "ui_tab",
+    "name": "WX · Trends",
+    "icon": "show_chart",
+    "order": 2,
+    "disabled": false,
+    "hidden": false
+  },
+  {
+    "id": "57a584545f685f80",
+    "type": "ui_tab",
+    "name": "WX · Forecast",
+    "icon": "date_range",
+    "order": 3,
+    "disabled": false,
+    "hidden": false
+  },
+  {
+    "id": "631da647215a5709",
+    "type": "ui_tab",
+    "name": "WX · Air Quality",
+    "icon": "blur_on",
+    "order": 4,
+    "disabled": false,
+    "hidden": false
+  },
+  {
+    "id": "ac9ec2afd8fc506b",
+    "type": "ui_tab",
+    "name": "WX · Climate",
+    "icon": "assessment",
+    "order": 5,
+    "disabled": false,
+    "hidden": false
+  },
+  {
+    "id": "a84940fd76dd5c3a",
+    "type": "ui_tab",
+    "name": "WX · Diagnostics",
+    "icon": "settings",
+    "order": 6,
+    "disabled": false,
+    "hidden": false
+  },
+  {
+    "id": "4a9346db18cf023b",
+    "type": "global-config",
+    "env": [],
+    "modules": {
+      "node-red-dashboard": "3.6.6"
+    }
+  }
+]
